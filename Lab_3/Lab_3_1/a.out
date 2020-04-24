@@ -1,0 +1,117 @@
+#! /usr/bin/vvp
+:ivl_version "10.1 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "vhdl_sys";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0x5572fc94ca90 .scope module, "test_bench" "test_bench" 2 1;
+ .timescale 0 0;
+v0x5572fc96d2e0_0 .var "A", 3 0;
+v0x5572fc96d3c0_0 .var "B", 3 0;
+v0x5572fc96d490_0 .net "EQU", 0 0, v0x5572fc96cfa0_0;  1 drivers
+v0x5572fc96d590_0 .net "GA", 0 0, v0x5572fc96d070_0;  1 drivers
+v0x5572fc96d660_0 .net "GB", 0 0, v0x5572fc96d130_0;  1 drivers
+S_0x5572fc94cc10 .scope module, "uut" "comparator_4_bit" 2 6, 3 1 0, S_0x5572fc94ca90;
+ .timescale 0 0;
+    .port_info 0 /INPUT 4 "A"
+    .port_info 1 /INPUT 4 "B"
+    .port_info 2 /OUTPUT 1 "GA"
+    .port_info 3 /OUTPUT 1 "EQU"
+    .port_info 4 /OUTPUT 1 "GB"
+v0x5572fc94ce60_0 .net "A", 3 0, v0x5572fc96d2e0_0;  1 drivers
+v0x5572fc96cec0_0 .net "B", 3 0, v0x5572fc96d3c0_0;  1 drivers
+v0x5572fc96cfa0_0 .var "EQU", 0 0;
+v0x5572fc96d070_0 .var "GA", 0 0;
+v0x5572fc96d130_0 .var "GB", 0 0;
+E_0x5572fc90dda0 .event edge, v0x5572fc96cec0_0, v0x5572fc94ce60_0;
+    .scope S_0x5572fc94cc10;
+T_0 ;
+    %wait E_0x5572fc90dda0;
+    %load/vec4 v0x5572fc96cec0_0;
+    %load/vec4 v0x5572fc94ce60_0;
+    %cmp/s;
+    %jmp/0xz  T_0.0, 5;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x5572fc96d070_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5572fc96cfa0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5572fc96d130_0, 0, 1;
+    %jmp T_0.1;
+T_0.0 ;
+    %load/vec4 v0x5572fc94ce60_0;
+    %load/vec4 v0x5572fc96cec0_0;
+    %cmp/e;
+    %jmp/0xz  T_0.2, 4;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5572fc96d070_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x5572fc96cfa0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5572fc96d130_0, 0, 1;
+    %jmp T_0.3;
+T_0.2 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5572fc96d070_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5572fc96cfa0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x5572fc96d130_0, 0, 1;
+T_0.3 ;
+T_0.1 ;
+    %jmp T_0;
+    .thread T_0, $push;
+    .scope S_0x5572fc94ca90;
+T_1 ;
+    %vpi_call 2 10 "$dumpfile", "test.vcd" {0 0 0};
+    %vpi_call 2 11 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x5572fc94ca90 {0 0 0};
+    %pushi/vec4 6, 0, 4;
+    %store/vec4 v0x5572fc96d2e0_0, 0, 4;
+    %pushi/vec4 14, 0, 4;
+    %store/vec4 v0x5572fc96d3c0_0, 0, 4;
+    %delay 100, 0;
+    %pushi/vec4 7, 0, 4;
+    %store/vec4 v0x5572fc96d2e0_0, 0, 4;
+    %pushi/vec4 4, 0, 4;
+    %store/vec4 v0x5572fc96d3c0_0, 0, 4;
+    %delay 100, 0;
+    %pushi/vec4 15, 0, 4;
+    %store/vec4 v0x5572fc96d2e0_0, 0, 4;
+    %pushi/vec4 12, 0, 4;
+    %store/vec4 v0x5572fc96d3c0_0, 0, 4;
+    %delay 100, 0;
+    %pushi/vec4 14, 0, 4;
+    %store/vec4 v0x5572fc96d2e0_0, 0, 4;
+    %pushi/vec4 14, 0, 4;
+    %store/vec4 v0x5572fc96d3c0_0, 0, 4;
+    %delay 100, 0;
+    %pushi/vec4 6, 0, 4;
+    %store/vec4 v0x5572fc96d2e0_0, 0, 4;
+    %pushi/vec4 6, 0, 4;
+    %store/vec4 v0x5572fc96d3c0_0, 0, 4;
+    %delay 100, 0;
+    %pushi/vec4 6, 0, 4;
+    %store/vec4 v0x5572fc96d3c0_0, 0, 4;
+    %pushi/vec4 14, 0, 4;
+    %store/vec4 v0x5572fc96d2e0_0, 0, 4;
+    %delay 100, 0;
+    %pushi/vec4 6, 0, 4;
+    %store/vec4 v0x5572fc96d3c0_0, 0, 4;
+    %pushi/vec4 4, 0, 4;
+    %store/vec4 v0x5572fc96d2e0_0, 0, 4;
+    %delay 100, 0;
+    %pushi/vec4 15, 0, 4;
+    %store/vec4 v0x5572fc96d3c0_0, 0, 4;
+    %pushi/vec4 12, 0, 4;
+    %store/vec4 v0x5572fc96d2e0_0, 0, 4;
+    %delay 100, 0;
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "test_bench.v";
+    "comparator_4_bit.v";

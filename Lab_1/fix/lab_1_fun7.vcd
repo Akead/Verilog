@@ -1,0 +1,110 @@
+$date
+	Mon Mar 23 15:30:36 2020
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	100ps
+$end
+$scope module lab_1_fun7_tb $end
+$var wire 1 ! F $end
+$var wire 1 " D $end
+$var wire 1 # C $end
+$var wire 1 $ B $end
+$var wire 1 % A $end
+$var integer 32 & i [31:0] $end
+$scope module the_circut $end
+$var wire 1 % A $end
+$var wire 1 $ B $end
+$var wire 1 # C $end
+$var wire 1 " D $end
+$var wire 1 ! F $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b0 &
+0%
+0$
+0#
+0"
+1!
+$end
+#100
+0!
+1"
+b1 &
+#200
+1!
+0"
+1#
+b10 &
+#300
+1"
+b11 &
+#400
+0!
+0"
+0#
+1$
+b100 &
+#500
+1!
+1"
+b101 &
+#600
+0!
+0"
+1#
+b110 &
+#700
+1!
+1"
+b111 &
+#800
+1!
+0"
+0#
+0$
+1%
+b1000 &
+#900
+0!
+1"
+b1001 &
+#1000
+1!
+0"
+1#
+b1010 &
+#1100
+1"
+b1011 &
+#1200
+0!
+0"
+0#
+1$
+b1100 &
+#1300
+1!
+1"
+b1101 &
+#1400
+0!
+0"
+1#
+b1110 &
+#1500
+1!
+1"
+b1111 &
+#1600
+1!
+0"
+0#
+0$
+0%
+b10000 &

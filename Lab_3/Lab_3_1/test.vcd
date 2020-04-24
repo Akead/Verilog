@@ -1,0 +1,70 @@
+$date
+	Sun Apr  5 11:32:03 2020
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module test_bench $end
+$var wire 1 ! GB $end
+$var wire 1 " GA $end
+$var wire 1 # EQU $end
+$var reg 4 $ A [3:0] $end
+$var reg 4 % B [3:0] $end
+$scope module uut $end
+$var wire 4 & A [3:0] $end
+$var wire 4 ' B [3:0] $end
+$var reg 1 # EQU $end
+$var reg 1 " GA $end
+$var reg 1 ! GB $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b1110 '
+b110 &
+b1110 %
+b110 $
+0#
+1"
+0!
+$end
+#100
+b100 %
+b100 '
+b111 $
+b111 &
+#200
+b1100 %
+b1100 '
+b1111 $
+b1111 &
+#300
+1#
+0"
+b1110 %
+b1110 '
+b1110 $
+b1110 &
+#400
+b110 %
+b110 '
+b110 $
+b110 &
+#500
+1!
+0#
+b1110 $
+b1110 &
+#600
+b100 $
+b100 &
+#700
+b1100 $
+b1100 &
+b1111 %
+b1111 '
+#800
